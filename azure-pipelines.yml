@@ -16,3 +16,24 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+- task: CmdLine@2
+  inputs:
+    script: |
+      ssh-keygen -b 2048 -t rsa -f swarmvm
+      chmod 400 swarmvm
+- task: TerraformTaskV3@3
+  inputs:
+    provider: 'azurerm'
+    command: 'init'
+    backendServiceArm: 'Pay-As-You-Go(af5a6fb3-b792-4f0e-aa58-7cf18b9cad30)'
+    backendAzureRmResourceGroupName: 'resource_group_practice'
+- task: TerraformTaskV3@3
+  inputs:
+    provider: 'azurerm'
+    command: 'plan'
+    environmentServiceNameAzureRM: 'Pay-As-You-Go(af5a6fb3-b792-4f0e-aa58-7cf18b9cad30)'
+- task: TerraformTaskV3@3
+  inputs:
+    provider: 'azurerm'
+    command: 'apply'
+    environmentServiceNameAzureRM: 'Pay-As-You-Go(af5a6fb3-b792-4f0e-aa58-7cf18b9cad30)'
