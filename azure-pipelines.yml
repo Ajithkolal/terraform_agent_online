@@ -21,6 +21,15 @@ steps:
     script: |
       ssh-keygen -b 2048 -t rsa -f swarmvm
       chmod 400 swarmvm
+- task: CopyFiles@2
+  inputs:
+    Contents: '**'
+    TargetFolder: '$(build.artifactstagingdirectory)'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
 - task: TerraformTaskV3@3
   inputs:
     provider: 'azurerm'
