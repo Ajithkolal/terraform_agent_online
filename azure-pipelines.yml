@@ -31,6 +31,9 @@ steps:
     command: 'init'
     backendServiceArm: 'Pay-As-You-Go(af5a6fb3-b792-4f0e-aa58-7cf18b9cad30)'
     backendAzureRmResourceGroupName: 'resource_group_practice'
+    backendAzureRmStorageAccountName: '..'
+    backendAzureRmContainerName: '..'
+    backendAzureRmKey: 'tf/terraform.tfstate'
 - task: TerraformTaskV3@3
   inputs:
     provider: 'azurerm'
