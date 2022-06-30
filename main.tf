@@ -1,5 +1,5 @@
 resource "random_pet" "rg-name" {
-  prefix = var.resource_group_name_prefix
+  prefix = var.resource_group_name
 }
 
 resource "azurerm_resource_group" "rg" {
@@ -48,7 +48,7 @@ resource "azurerm_network_security_group" "nsg" {
     protocol                   = "Tcp"
     source_port_range          = "*"
     destination_port_range     = "*"
-    source_address_prefix      = "x.x.x.x"
+    source_address_prefix      = "13.89.219.40"
     destination_address_prefix = "*"
   }
 }
