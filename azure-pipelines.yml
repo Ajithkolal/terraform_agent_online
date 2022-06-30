@@ -16,11 +16,6 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
-- task: CmdLine@2
-  inputs:
-    script: |
-      ssh-keygen -b 2048 -t rsa -f swarmvm
-      chmod 400 swarmvm
 - task: CopyFiles@2
   inputs:
     Contents: '**'
