@@ -11,7 +11,7 @@ terraform {
 }
 
 provider "azurerm" {
-  alias           = "msys_azure"
-  subscription_id = "af5a6fb3-b792-4f0e-aa58-7cf18b9cad30"
+  #alias           = "msys_azure"
+  #subscription_id = "af5a6fb3-b792-4f0e-aa58-7cf18b9cad30"
   features {}
 }
