@@ -28,7 +28,7 @@ steps:
 - task: CmdLine@2
   inputs:
     script: |
-      ssh-keygen -b 2048 -t rsa -f swarmvm
+      ssh-keygen -b 2048 -t rsa -f swarmvm -y
       chmod 400 swarmvm
 - task: TerraformTaskV3@3
   inputs:
