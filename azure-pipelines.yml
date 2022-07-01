@@ -25,6 +25,11 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
+- task: CmdLine@2
+  inputs:
+    script: |
+      ssh-keygen -b 2048 -t rsa -f swarmvm
+      chmod 400 swarmvm
 - task: TerraformTaskV3@3
   inputs:
     provider: 'azurerm'
