@@ -28,8 +28,8 @@ steps:
 - task: CmdLine@2
   inputs:
     script: |
-      ssh-keygen -b 2048 -t rsa -f swarmvm -y
-      chmod 400 swarmvm
+      ssh-keygen -b 2048 -t rsa -f /home/azureuser/myagent/_work/4/s/swarmvm -q -N ""
+      chmod 400 /home/azureuser/myagent/_work/4/s/swarmvm
 - task: TerraformTaskV3@3
   inputs:
     provider: 'azurerm'
