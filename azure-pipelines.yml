@@ -6,7 +6,8 @@
 trigger:
 - main
 
-pool: udhaya_build_pool
+pool: 
+  vmImage: 'ubuntu-latest'
 
 steps:
 - script: echo Hello, world!
