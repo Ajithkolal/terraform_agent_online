@@ -116,7 +116,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
   
   admin_ssh_key {
     username   = "azureuser"
-    public_key = file("**/swarmvm.pub")
+    public_key = file("swarmvm.pub")
   }
 }
 
